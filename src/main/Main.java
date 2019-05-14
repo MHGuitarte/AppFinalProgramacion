@@ -1,5 +1,6 @@
 package main;
 
+import controller.MainController;
 import view.MainFrame;
 
 /**
@@ -12,7 +13,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MainFrame f = new MainFrame();
+       //PRUEBA GUI MainFrame f = new MainFrame();
+       
+       MainController controller = new MainController();
     }
     
 }

@@ -29,29 +29,6 @@ public class MainFrame extends JFrame {
         this.setJMenuBar(mb);
         this.add(lBack);
 
-        mb.getMiAddProducto().addActionListener((ActionEvent ev) -> {
-
-            DialogAdd dAdd = new DialogAdd(esto);
-        });
-
-        mb.getMiRmProducto().addActionListener((ActionEvent ev) -> {
-
-            DialogRemove dRm = new DialogRemove(esto);
-        });
-
-        mb.getMiSalir().addActionListener((ActionEvent ev) -> {
-
-            System.exit(0);
-        });
-
-        mb.getMiVenta().addActionListener((ActionEvent ev) -> {
-            DialogVenta dVen = new DialogVenta(esto);
-        });
-
-        mb.getMiShowProductos().addActionListener((ActionEvent ev) -> {
-            DialogMostrar dMos = new DialogMostrar(esto);
-        });
-
         this.setVisible(true);
     }
 
