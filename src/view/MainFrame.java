@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +15,6 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         this.setTitle("Tienda");
-        JFrame esto = this;
         this.setSize(640, 480);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -24,7 +22,7 @@ public class MainFrame extends JFrame {
 
         mb = new Main_MenuBar();
         lBack = new JLabel();
-        lBack.setIcon(new ImageIcon("src/view/resources/back.png"));
+        lBack.setIcon(new ImageIcon(getClass().getResource("/view/Resources/back.png"))); //Así es la única manera de abrir esto en Linux
 
         this.setJMenuBar(mb);
         this.add(lBack);

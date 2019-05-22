@@ -6,6 +6,7 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+import model.Classes.Tienda;
 import view.MainFrame;
 import view.Main_MenuBar;
 
@@ -15,12 +16,16 @@ import view.Main_MenuBar;
  */
 public class MainController {
 
-    private final MainFrame mf = new MainFrame();
-    private final Main_MenuBar mb = mf.getMb();
+    private static final MainFrame mf = new MainFrame();
+    private static final Main_MenuBar mb = mf.getMb();
+    private static Tienda tMain;
+    private static Tienda tAux;
 
     public MainController() {
 //Asignamos las distintas acciones a los distintos botones y opciones
-        mb.getMiNuevo().addActionListener((ActionEvent ev) -> Orders.nuevo(mf));
+        mb.getMiNuevo().addActionListener((ActionEvent ev) -> {
+            Orders.nuevo(mf);
+        });
         mb.getMiAbrir().addActionListener((ActionEvent ev) -> Orders.abrir(mf));
         mb.getMiGuardar().addActionListener((ActionEvent ev) -> Orders.guardar(mf));
         mb.getMiGuardarComo().addActionListener((ActionEvent ev) -> Orders.guardarComo(mf));
@@ -32,6 +37,22 @@ public class MainController {
         mb.getMiAyuda().addActionListener((ActionEvent ev) -> Orders.ayuda(mf));
         mb.getMiAbout().addActionListener((ActionEvent ev) -> Orders.about(mf));
 
+    }
+
+    public static Tienda gettMain() {
+        return tMain;
+    }
+
+    public static Tienda gettAux() {
+        return tAux;
+    }
+
+    public static MainFrame getMf() {
+        return mf;
+    }
+
+    public static Main_MenuBar getMb() {
+        return mb;
     }
 
 }

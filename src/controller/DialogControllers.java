@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
-import view.MainFrame;
+import model.Classes.Componente;
+import model.Classes.Tienda;
+import view.DialogAdd;
 
 /**
  *
@@ -13,14 +10,51 @@ import view.MainFrame;
  */
 public class DialogControllers {
 
-    private MainFrame mf;
+    public static void addArticulo(DialogAdd add, Tienda t) {
+        String s = add.getActual();
+        String id, nombre, desc, fab, comp = "";
+        float precio = 0f;
+        int unidades, dd, mm, yy = 0;
 
-    public DialogControllers() {
+        switch (s) {
+            case ("comp"): {
+                id = add.getComp().getTxtId().getText();
+                nombre = add.getComp().getTxtNom().getText();
+                desc = add.getComp().getTxtDesc().getText();
+                fab = add.getComp().getTxtFab().getText();
+                comp = add.getComp().getCbTipo().getSelectedItem().toString();
+                precio = Float.parseFloat(add.getComp().getTxtPre().getText());
+                unidades = Integer.parseInt(add.getComp().getTxtUds().getText());
+                dd = Integer.parseInt(add.getComp().getTxtUds().getText());
+                mm = Integer.parseInt(add.getComp().getTxtUds().getText());
+                yy = Integer.parseInt(add.getComp().getTxtUds().getText());
+
+                t.getComponentes().add(new Componente());
+                break;
+            }
+
+            case ("mov"): {
+
+                break;
+            }
+
+            case ("tab"): {
+
+                break;
+            }
+        }
     }
 
-    public DialogControllers(MainFrame mf) {
-        this.mf = mf;
+    public static void rmArticulo() {
+
     }
-    
-    
+
+    public static void aceptarVenta() {
+
+    }
+
+    public static void listarProductos() {
+
+    }
+
 }

@@ -1,4 +1,4 @@
-package view.panels;
+package view.Panels;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -13,17 +13,16 @@ import javax.swing.border.Border;
  *
  * @author manuel
  */
-public class AddMovil extends JPanel {
+public class AddTablet extends JPanel {
 
-    private JComboBox cbMarca, cbModelo, cbSO;
-    private JLabel lId, lNom, lPre, lUds, lDesc, lMarca, lModelo, lSO, lCam, lMem, lCPU;
-    private JTextField txtId, txtNom, txtPre, txtUds, txtDesc, txtCam, txtMem, txtCPU;
+    private JComboBox cbMarca, cbModelo;
+    private JLabel lId, lNom, lPre, lUds, lDesc, lMarca, lModelo, lPan, lMem, lCPU;
+    private JTextField txtId, txtNom, txtPre, txtUds, txtDesc, txtPan, txtMem, txtCPU;
 
-    public AddMovil() {
+    public AddTablet() {
 
         cbMarca = new JComboBox();
         cbModelo = new JComboBox();
-        cbSO = new JComboBox();
 
         lId = new JLabel("Identificador");
         lNom = new JLabel("Nombre");
@@ -32,8 +31,7 @@ public class AddMovil extends JPanel {
         lDesc = new JLabel("Descripción");
         lMarca = new JLabel("Marca");
         lModelo = new JLabel("Modelo");
-        lSO = new JLabel("Sistema Operativo");
-        lCam = new JLabel("Cámara");
+        lPan = new JLabel("Pantalla");
         lMem = new JLabel("Memoria");
         lCPU = new JLabel("Procesador");
 
@@ -42,7 +40,7 @@ public class AddMovil extends JPanel {
         txtPre = new JTextField(15);
         txtUds = new JTextField(15);
         txtDesc = new JTextField(15);
-        txtCam = new JTextField(15);
+        txtPan = new JTextField(15);
         txtMem = new JTextField(15);
         txtCPU = new JTextField(15);
 
@@ -56,8 +54,7 @@ public class AddMovil extends JPanel {
         lDesc.setBorder(borderLabel);
         lMarca.setBorder(borderLabel);
         lModelo.setBorder(borderLabel);
-        lSO.setBorder(borderLabel);
-        lCam.setBorder(borderLabel);
+        lPan.setBorder(borderLabel);
         lMem.setBorder(borderLabel);
         lCPU.setBorder(borderLabel);
 
@@ -66,13 +63,12 @@ public class AddMovil extends JPanel {
         txtPre.setBorder(borderTxt);
         txtUds.setBorder(borderTxt);
         txtDesc.setBorder(borderTxt);
-        txtCam.setBorder(borderTxt);
+        txtPan.setBorder(borderTxt);
         txtMem.setBorder(borderTxt);
         txtCPU.setBorder(borderTxt);
 
         cbMarca.setBorder(borderTxt);
         cbModelo.setBorder(borderTxt);
-        cbSO.setBorder(borderTxt);
 
         //LAYOUTS
         this.setLayout(new GridBagLayout());
@@ -144,40 +140,31 @@ public class AddMovil extends JPanel {
         gbc.gridy = 2;
         this.add(cbModelo, gbc);
 
-//Sistema Operativo (Enum)
+//Pantalla
         gbc.gridx = 2;
         gbc.gridy = 4;
-        this.add(lSO, gbc);
+        this.add(lPan, gbc);
 
         gbc.gridx = 3;
         gbc.gridy = 4;
-        this.add(cbSO, gbc);
-
-//Cámara
-        gbc.gridx = 2;
-        gbc.gridy = 6;
-        this.add(lCam, gbc);
-
-        gbc.gridx = 3;
-        gbc.gridy = 6;
-        this.add(txtCam, gbc);
+        this.add(txtPan, gbc);
 
 //Memoria
         gbc.gridx = 2;
-        gbc.gridy = 8;
+        gbc.gridy = 6;
         this.add(lMem, gbc);
 
         gbc.gridx = 3;
-        gbc.gridy = 8;
+        gbc.gridy = 6;
         this.add(txtMem, gbc);
 
 //Procesador
         gbc.gridx = 2;
-        gbc.gridy = 10;
+        gbc.gridy = 8;
         this.add(lCPU, gbc);
 
         gbc.gridx = 3;
-        gbc.gridy = 10;
+        gbc.gridy = 8;
         this.add(txtCPU, gbc);
 
     }
@@ -188,10 +175,6 @@ public class AddMovil extends JPanel {
 
     public JComboBox getCbModelo() {
         return cbModelo;
-    }
-
-    public JComboBox getCbSO() {
-        return cbSO;
     }
 
     public JLabel getlId() {
@@ -222,12 +205,8 @@ public class AddMovil extends JPanel {
         return lModelo;
     }
 
-    public JLabel getlSO() {
-        return lSO;
-    }
-
-    public JLabel getlCam() {
-        return lCam;
+    public JLabel getlPan() {
+        return lPan;
     }
 
     public JLabel getlMem() {
@@ -258,8 +237,8 @@ public class AddMovil extends JPanel {
         return txtDesc;
     }
 
-    public JTextField getTxtCam() {
-        return txtCam;
+    public JTextField getTxtPan() {
+        return txtPan;
     }
 
     public JTextField getTxtMem() {
@@ -269,5 +248,5 @@ public class AddMovil extends JPanel {
     public JTextField getTxtCPU() {
         return txtCPU;
     }
-
+    
 }

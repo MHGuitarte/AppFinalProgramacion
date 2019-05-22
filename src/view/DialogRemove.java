@@ -11,9 +11,9 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import view.panels.AddComponente;
-import view.panels.AddMovil;
-import view.panels.AddTablet;
+import view.Panels.AddComponente;
+import view.Panels.AddMovil;
+import view.Panels.AddTablet;
 
 /**
  *
